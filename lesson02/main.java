@@ -14,15 +14,20 @@ package lesson02;
 
 class lesson2 {
     public static void main(String[] args){
-        check("qweqwe", "123", "123");
+        System.out.println(check(null, "123", "123"));
+        System.out.println(check("qweqwe", "1234", "123"));
+        System.out.println(check("qweqwe ", "123", "123"));
     }
 
     public static Boolean check(String login, String password, String confirmPassword) {
         try {
-            if (login == null || login.length() >= 20 || !login.matches("^[a-zA-Z0-9_]+$"))
-                throw new WrongLoginException();
+            if (login == null || password == null || confirmPassword == null)
+                throw new IllegalArgumentException("параметр не должен быть null");
+
+            if (login.length() >= 20 || !login.matches("^[a-zA-Z0-9_]+$"))
+                throw new WrongLoginException("Беда с логином");
             if (password.length() >= 20 || !password.matches("^[a-zA-Z0-9_]+$"))
-                throw new WrongPasswordException();
+                throw new WrongPasswordException("Беда с паролем");
             if (!password.equals(confirmPassword))
                 throw new Exception("Не совпало");
             return true;
