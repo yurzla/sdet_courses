@@ -18,7 +18,7 @@ class One<T> {
     public T getObj() { 
       return this.obj;
     }
- }
+}
 
 class Two<T1, T2>{
     private T1 obj_count;
@@ -36,7 +36,7 @@ class Two<T1, T2>{
     public T2 getThing(){
         return obj_thing;
     }
- }
+}
 
 class lesson3
 {
