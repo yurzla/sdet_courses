@@ -1,4 +1,5 @@
 package lesson3;
+
 public class Count {
     int count_things = 0;
 
