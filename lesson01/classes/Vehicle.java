@@ -4,13 +4,20 @@ import lesson01.enums.CarClass;
 import lesson01.enums.TruckTrailer;
 import lesson01.interfaces.IVehicle;
 
-// Как минимум один абстрактный класс.
-// Каждый класс должен содержать не менее 2 полей.
-// Должна быть реализация хотя бы одного параметризованного конструктора.
-// Реализация инкапсуляции включая разграничение с модификаторами доступа.
+/*
+ * Как минимум один абстрактный класс.
+ * Каждый класс должен содержать не менее 2 полей.
+ * Должна быть реализация хотя бы одного параметризованного конструктора.
+ * Реализация инкапсуляции включая разграничение с модификаторами доступа.
+ */
+
 public abstract class Vehicle implements IVehicle {
+    private String owner = ""; // какая-то идентицикационная информация о хозяине
+    private String manufacturer = ""; // информация об изготовителе
+
     // Наличие статических полей и методов
     private static int totalVehiclesNumber = 0;
+
     public static int getTotalVehiclesNumber() {
         return totalVehiclesNumber;
     }
@@ -26,15 +33,12 @@ public abstract class Vehicle implements IVehicle {
         stateNumber = value;
     }
 
-    private String owner = ""; // какая-то идентицикационная информация о хозяине
     public String getOwner() {
         return owner;
     }
     public void setOwner(String value) {
         owner = value;
     }
-
-    private String manufacturer = ""; // информация об изготовителе
 
     public String getManufacturer() {
         return manufacturer;
@@ -59,13 +63,20 @@ public abstract class Vehicle implements IVehicle {
         this.manufacturer = manufacturer;
     }
 
-    public static IVehicle CreateCar(String stateNumber, String owner, String manufacturer, int passengerNumber, CarClass carClass) {
+    public static IVehicle CreateCar(String stateNumber, String owner, 
+                                        String manufacturer, int passengerNumber,
+                                        CarClass carClass) {
         Vehicle.setTotalVehiclesNumber(Vehicle.getTotalVehiclesNumber() + 1);
-        return Car.create(stateNumber, owner, manufacturer, passengerNumber, carClass);
+        return Car.create(stateNumber, owner, manufacturer, 
+                            passengerNumber, carClass);
     }
 
-    public static IVehicle CreateTruck(String stateNumber, String owner, String manufacturer, TruckTrailer trailer, int loadCapasityKG) {
+    public static IVehicle CreateTruck(String stateNumber, String owner, 
+                                        String manufacturer, 
+                                        TruckTrailer trailer, 
+                                        int loadCapasityKG) {
         Vehicle.setTotalVehiclesNumber(Vehicle.getTotalVehiclesNumber() + 1);
-        return Truck.create(stateNumber, owner, manufacturer, trailer, loadCapasityKG);
+        return Truck.create(stateNumber, owner, manufacturer, trailer, 
+                                                        loadCapasityKG);
     }
 }

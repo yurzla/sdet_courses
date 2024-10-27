@@ -1,6 +1,6 @@
 package lesson01.enums;
 
-// класс л/а к которому принадлежит авто
+/* класс л/а к которому принадлежит авто */ 
 public enum CarClass {
     A, B, C, D, E;
 

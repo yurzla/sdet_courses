@@ -10,9 +10,14 @@ class Runme {
     public static void main(String[] args)
     {
         ArrayList<IVehicle> vehicles = new ArrayList<IVehicle>();
-        vehicles.add(Vehicle.CreateCar("а123бв73rus", "Федя", "Опель", 5, CarClass.B));
-        vehicles.add(Vehicle.CreateCar("в321бa73rus", "Вася", "Неопель", 5, CarClass.B));
-        vehicles.add(Vehicle.CreateTruck("я111юэ73rus", "Петя@Ko", "Мамаз", TruckTrailer.TRAILER, 5000));
+        vehicles.add(Vehicle.CreateCar("а123бв73rus", "Федя", "Опель",
+                                        5, CarClass.B));
+
+        vehicles.add(Vehicle.CreateCar("в321бa73rus", "Вася", "Неопель", 
+                                        5, CarClass.B));
+
+        vehicles.add(Vehicle.CreateTruck("я111юэ73rus", "Петя@Ko", "Мамаз", 
+                                        TruckTrailer.TRAILER, 5000));
 
         System.out.println("[");
         for (IVehicle v: vehicles)
