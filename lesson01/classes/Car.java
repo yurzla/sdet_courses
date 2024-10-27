@@ -46,6 +46,6 @@ public class Car extends Vehicle implements ICar {
                                 String manufacturer, int passengerNumber, 
                                 CarClass carClass) {
         return new Car(stateNumber, owner, manufacturer, 
-                        passengerNumber, carClass);
+                            passengerNumber, carClass);
     }
 }

@@ -68,7 +68,7 @@ public abstract class Vehicle implements IVehicle {
                                         CarClass carClass) {
         Vehicle.setTotalVehiclesNumber(Vehicle.getTotalVehiclesNumber() + 1);
         return Car.create(stateNumber, owner, manufacturer, 
-                            passengerNumber, carClass);
+                                passengerNumber, carClass);
     }
 
     public static IVehicle CreateTruck(String stateNumber, String owner, 

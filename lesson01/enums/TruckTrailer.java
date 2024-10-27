@@ -1,7 +1,6 @@
 package lesson01.enums;
 
 /* виды прицепов грузовика: никакого, прицеп, полуприцеп */  
-
 public enum TruckTrailer {
     NONE, TRAILER, SEMITRAILER;
 

@@ -48,6 +48,6 @@ public class Truck extends Vehicle implements ITruck {
                                 String manufacturer, TruckTrailer trailer, 
                                 int loadCapasityKG) {
         return new Truck(stateNumber, owner, manufacturer, 
-                                      trailer, loadCapasityKG);
+                                    trailer, loadCapasityKG);
     }
 }

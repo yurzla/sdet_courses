@@ -17,7 +17,7 @@ class Runme {
                                         5, CarClass.B));
 
         vehicles.add(Vehicle.CreateTruck("я111юэ73rus", "Петя@Ko", "Мамаз", 
-                                        TruckTrailer.TRAILER, 5000));
+                                            TruckTrailer.TRAILER, 5000));
 
         System.out.println("[");
         for (IVehicle v: vehicles)
