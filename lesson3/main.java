@@ -2,6 +2,7 @@ package lesson3;
 
 import java.util.function.Predicate;
 import java.util.function.Function;
+import lesson3.IMyClass;
 // Домашнее задание №3:
 // 1. Добавить в классовую модель из домашнего задания 1 (или написать новую модель)
 // примеры использования дженерик-классов (обобщенных типов) и дженерик-интерфейсов.
@@ -77,6 +78,12 @@ class lesson3
 
             Function<Count, Integer> function = x -> x.getCount() * 10;
             System.out.println(function.apply(count_thing1) + function.apply(count_thing2));
+            System.out.println();
+
+            IMyClass<String> my1 = new MyClass<String>("Foo");
+            my1.saySomething();
+            IMyClass<Integer> my2 = new MyClass<Integer>(13);
+            my2.saySomething();
             System.out.println();
         }
         {
