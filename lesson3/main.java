@@ -84,7 +84,7 @@ class lesson3
             my1.saySomething();
             IMyClass<Integer> my2 = new MyClass<Integer>(13);
             my2.saySomething();
-            
+            System.out.println();
         }
         {
             System.out.println("Zadanie 2");
