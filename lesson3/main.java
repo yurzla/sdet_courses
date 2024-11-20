@@ -2,7 +2,6 @@ package lesson3;
 
 import java.util.function.Predicate;
 import java.util.function.Function;
-import lesson3.IMyClass;
 // Домашнее задание №3:
 // 1. Добавить в классовую модель из домашнего задания 1 (или написать новую модель)
 // примеры использования дженерик-классов (обобщенных типов) и дженерик-интерфейсов.

@@ -1,7 +1,5 @@
 package lesson3;
 
-import lesson3.IMyClass;
-
 public class MyClass<T> implements IMyClass<T> {
     private T something;
 
