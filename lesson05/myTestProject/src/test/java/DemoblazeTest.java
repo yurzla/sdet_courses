@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 @Test
 public class DemoblazeTest {
     private static final Logger logger = LoggerFactory.getLogger(DemoblazeTest.class);
+
     @Test
     public void loginModalTriggering() {
         logger.info("demoblaze loginModalTriggering start");
@@ -35,6 +36,7 @@ public class DemoblazeTest {
 
         logger.info("demoblaze loginModalTriggering stop");
     }
+
     @Test
     public void loginWithParams() {
         logger.info("demoblaze loginWithParams start");
