@@ -2,6 +2,9 @@ import com.codeborne.selenide.Configuration;
 import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
+    /**
+     * метод выполняется перед созданием экземпляра класса
+     */
     @BeforeClass
     void initBeforeClass() {
         // сайт был в списке специальных сайтов для отработки автотестирования

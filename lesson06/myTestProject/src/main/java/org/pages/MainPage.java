@@ -20,18 +20,31 @@ public class MainPage {
     @FindBy(css = "a[id='login2']")
     private SelenideElement showLoginWindowButton;
 
+    /**
+     * Проверить, что модальное окно login видно
+     * @return this
+     */
     @Step("Проверить, что модальное окно login видно")
     public MainPage checkLoginWindowVisible() {
         loginModal.shouldBe(visible);
         return this;
     }
 
+    /**
+     * Проверить, что модальное окно login невидно
+     * @return this
+     */
     @Step("Проверить, что модальное окно login невидно")
     public MainPage checkLoginWindowHidden() {
         loginModal.shouldBe(hidden);
         return this;
     }
 
+    /**
+     * Проверить видимость залогиненого пользователя
+     * @param userName имя пользователя
+     * @return this
+     */
     @Step("Проверить видимость залогиненого пользователя")
     public MainPage checkLoggedInUserName(String userName) {
         loggedInUserName.shouldBe(visible).
@@ -39,6 +52,10 @@ public class MainPage {
         return this;
     }
 
+    /**
+     * Показать модальное окно login
+     * @return LoginModal.class
+     */
     @Step("Показать модальное окно login")
     public LoginModal showLoginModal() {
         showLoginWindowButton.shouldBe(visible)

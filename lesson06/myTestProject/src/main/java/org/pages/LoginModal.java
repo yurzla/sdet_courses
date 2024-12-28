@@ -20,6 +20,10 @@ public class LoginModal {
     @FindBy(css = "div[id='logInModal'] button.btn-primary")
     private SelenideElement loginButton;
 
+    /**
+     * Убрать модальное login окно
+     * @return MainPage.class
+     */
     @Step("Убрать модальное login окно")
     public MainPage hideLoginModal() {
         hideLoginWindowButton.shouldBe(visible)
@@ -27,6 +31,11 @@ public class LoginModal {
         return page(MainPage.class);
     }
 
+    /**
+     * Проверить наличие элемента ввода имени пользователя и ввести его
+     * @param userName имя пользователя
+     * @return this
+     */
     @Step("Проверить наличие элемента ввода имени пользователя и ввести его")
     public LoginModal checkUserNameAndTypeText(String userName) {
         textBoxLoginUsername.shouldBe(visible)
@@ -34,6 +43,11 @@ public class LoginModal {
         return this;
     }
 
+    /**
+     * Проверить наличие элемента ввода пароля и ввести его
+     * @param password пароль
+     * @return this
+     */
     @Step("Проверить наличие элемента ввода пароля и ввести его")
     public LoginModal checkPasswordAndTypeText(String password) {
         textBoxLoginPassword.shouldBe(visible)
@@ -41,6 +55,10 @@ public class LoginModal {
         return this;
     }
 
+    /**
+     * Проверить наличие кнопки login и нажать её
+     * @return this
+     */
     @Step("Проверить наличие кнопки login и нажать её")
     public LoginModal checkLoginButtonAndClick() {
         loginButton.shouldBe(visible)
