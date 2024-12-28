@@ -1,12 +1,3 @@
-lesson05/project/target/test-classes/SelenideExampleTest.class
-lesson05/project/target/test-classes/TestLogger.class
-lesson05/project/target/test-classes/TestNGExample.class
-lesson05/myTestProject/target/test-classes/DemoblazeTest.class
-lesson05/myTestProject/allure-results/2b86464a-ae9b-4530-a06b-dc6696016ae1-container.json
-lesson05/myTestProject/allure-results/7f42e5a8-d633-4326-a2f9-4e2153c690d8-result.json
-lesson05/myTestProject/allure-results/833e8083-ba1a-4af2-bea4-00711f7782cd-container.json
-lesson05/myTestProject/allure-results/ced1c657-4675-4caa-9c3a-0413761f71ec-result.json
-lesson05/myTestProject/allure-results/fdf971c2-3bfb-439f-9c16-168ce3e209ba-container.json
 lib/hamcrest-core-1.3.jar
 lib/junit-4.13.2.jar
 .idea/.gitignore
