@@ -8,9 +8,6 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.page;
 
 public class LoginModal {
-    @FindBy(css = "a[id='login2']")
-    private SelenideElement showLoginWindowButton;
-
     @FindBy(css = "div[id='logInModal'] button.close")
     private SelenideElement hideLoginWindowButton;
 
@@ -22,14 +19,6 @@ public class LoginModal {
 
     @FindBy(css = "div[id='logInModal'] button.btn-primary")
     private SelenideElement loginButton;
-
-    @Step("Показать модальное окно login")
-    public LoginModal showLoginModal() {
-        showLoginWindowButton.shouldBe(visible)
-                .shouldHave(text("Log in"))
-                .click();
-        return this;
-    }
 
     @Step("Убрать модальное login окно")
     public MainPage hideLoginModal() {

@@ -28,7 +28,7 @@ public class SimbirSoftTests extends BaseTest {
 
     @Test(description = "Create Person test")
     public void createPersonTest() {
-        Person person = new Person.Builder()
+        new Person.Builder()
                 .withName("Testoviy Test Testovich")
                 .withAge(45)
                 .withWeight(80)

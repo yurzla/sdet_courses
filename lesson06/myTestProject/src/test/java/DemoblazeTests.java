@@ -18,7 +18,6 @@ public class DemoblazeTests extends BaseTest {
     @Test(description = "Проверяем начальное состояние login окна и включаем его")
     public void loginModalTriggering() {
         page(MainPage.class).checkLoginWindowHidden()
-                .toLoginModal()
                 .showLoginModal()
                 .toMainPage()
                 .checkLoginWindowVisible()
@@ -30,7 +29,6 @@ public class DemoblazeTests extends BaseTest {
     @Test(description = "Проверяем операцию входа пользователя")
     public void loginWithFakeParams() {
         page(MainPage.class).checkLoginWindowHidden()
-                .toLoginModal()
                 .showLoginModal()
                 .toMainPage()
                 .checkLoginWindowVisible()

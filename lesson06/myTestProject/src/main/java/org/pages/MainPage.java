@@ -17,6 +17,9 @@ public class MainPage {
     @FindBy(id = "nameofuser")
     private SelenideElement loggedInUserName;
 
+    @FindBy(css = "a[id='login2']")
+    private SelenideElement showLoginWindowButton;
+
     @Step("Проверить, что модальное окно login видно")
     public MainPage checkLoginWindowVisible() {
         loginModal.shouldBe(visible);
@@ -34,6 +37,14 @@ public class MainPage {
         loggedInUserName.shouldBe(visible).
             shouldHave(text("Welcome " + userName));
         return this;
+    }
+
+    @Step("Показать модальное окно login")
+    public LoginModal showLoginModal() {
+        showLoginWindowButton.shouldBe(visible)
+                .shouldHave(text("Log in"))
+                .click();
+        return page(LoginModal.class);
     }
 
     /**
