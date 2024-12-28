@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.page;
-import static com.codeborne.selenide.Selenide.sleep;
 
 /**
  * Класс проверки главной страницы
@@ -21,14 +20,12 @@ public class MainPage {
     @Step("Проверить, что модальное окно login видно")
     public MainPage checkLoginWindowVisible() {
         loginModal.shouldBe(visible);
-        sleep(2000);
         return this;
     }
 
     @Step("Проверить, что модальное окно login невидно")
     public MainPage checkLoginWindowHidden() {
         loginModal.shouldBe(hidden);
-        sleep(2000);
         return this;
     }
 
@@ -36,7 +33,6 @@ public class MainPage {
     public MainPage checkLoggedInUserName(String userName) {
         loggedInUserName.shouldBe(visible).
             shouldHave(text("Welcome " + userName));
-        sleep(2000);
         return this;
     }
 

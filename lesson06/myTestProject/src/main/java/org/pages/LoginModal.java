@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.page;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class LoginModal {
     @FindBy(css = "a[id='login2']")
@@ -36,7 +35,6 @@ public class LoginModal {
     public MainPage hideLoginModal() {
         hideLoginWindowButton.shouldBe(visible)
                 .click();
-        sleep(2000);
         return page(MainPage.class);
     }
 
@@ -44,7 +42,6 @@ public class LoginModal {
     public LoginModal checkUserNameAndTypeText(String userName) {
         textBoxLoginUsername.shouldBe(visible)
                 .sendKeys(userName);
-        sleep(2000);
         return this;
     }
 
@@ -52,7 +49,6 @@ public class LoginModal {
     public LoginModal checkPasswordAndTypeText(String password) {
         textBoxLoginPassword.shouldBe(visible)
                 .sendKeys(password);
-        sleep(2000);
         return this;
     }
 
@@ -60,7 +56,6 @@ public class LoginModal {
     public LoginModal checkLoginButtonAndClick() {
         loginButton.shouldBe(visible)
                 .click();
-        sleep(2000);
         return this;
     }
 

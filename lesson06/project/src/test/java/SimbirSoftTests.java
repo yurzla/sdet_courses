@@ -17,7 +17,6 @@ public class SimbirSoftTests extends BaseTest {
                 .showFeedbackModal()
                 .checkModalWindowVisible()
                 .checkTextInput();
-        sleep(5000);
     }
 
     @Test(description = "Open contacts page")
@@ -25,7 +24,6 @@ public class SimbirSoftTests extends BaseTest {
         page(MainPage.class)
                 .goToContacts()
                 .contactsPageIsOpen();
-        sleep(7000);
     }
 
     @Test(description = "Create Person test")
