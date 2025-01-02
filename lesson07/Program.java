@@ -6,11 +6,26 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/*
+ * проект написан и запускается в vscode
+ */
+
+/* Задание 7:
+ * Тема Базы данных.
+ * Зарегистрироваться на https://sql-ex.ru/ и выполнить задания 1-20 https://sql-ex.ru/exercises/index.php?act=learn
+ * 
+ * С помощью JDBC реализовать создание БД, наполнение ее данными и выборку и
+ * изменение этих данных. В качестве субд выбрать любую удобную для разворачивания на
+ * локальной машине (например, PostgreSQL).
+ */
 public class Program{
     static String jdbcURL = "jdbc:postgresql://localhost:5433/";
     static String username = "postgres";
     static String password = "1";
 
+    /*
+     * создание БД, наполнение ее данными, выборка и изменение этих данных
+     */
     public static void main(String[] args) {
         String databaseName = "lesson07";
         String tableName = "foobarbaz1";
@@ -43,6 +58,10 @@ public class Program{
         }
     }
 
+    /*
+     * создание базы данных
+     * @param databaseName - имя базы данных которую надо создать
+     */
     public static void createDatabase(String databaseName) throws SQLException {
         try (Connection conn = DriverManager.getConnection(jdbcURL, username, password);
                 Statement stmt = conn.createStatement();) {
@@ -50,6 +69,11 @@ public class Program{
         }
     }
 
+    /*
+     * создает таблицу со столбцами Foo, Bar, Baz
+     * @param databaseName база где создаем таблицу
+     * @param tableName имя таблицы котоую хотим создать
+     */
     public static void createTableIfNotExists(String databaseName, String tableName) throws SQLException {
         String sql = "CREATE TABLE IF NOT EXISTS \"" + tableName + "\" (Id serial PRIMARY KEY, Foo VARCHAR(255), Bar VARCHAR(255), Baz VARCHAR(255))";
         try (Connection conn = DriverManager.getConnection(jdbcURL + databaseName, username, password);
@@ -58,6 +82,9 @@ public class Program{
         }
     }
 
+    /*
+     * запись в таблице со стообцами Foo, Bar, Baz
+     */
     static class Record {
         public String Foo;
         public String Bar;
@@ -77,6 +104,12 @@ public class Program{
         }
     }
 
+    /*
+     * добавление записи в таблицу
+     * @param databaseName имя базы данных
+     * @param tableName имя таблицы в которую производится добавление записи
+     * @param recordToAdd данные которые записываем в таблицу
+     */
     public static void addRecordToTable(String databaseName, String tableName, Record recordToAdd) throws SQLException
     {
         String sql = "INSERT INTO \"" + tableName + "\" (foo, bar, baz) VALUES (?,?,?)";
@@ -89,6 +122,13 @@ public class Program{
         }
     }
 
+    /*
+     * выбираем все записи из таблицы по значению поля foo
+     * @param databaseName имя базы данных
+     * @param tableName имя таблицы в которой ищем
+     * @param foo значение поля по которому будем выбирать записи в таблице
+     * @return список найденных в таблице Record-ов
+     */
     public static ArrayList<Record> getRecordsByFoo(String databaseName, String tableName, String foo)
             throws SQLException {
         ArrayList<Record> result = new ArrayList<Record>();
@@ -106,6 +146,13 @@ public class Program{
         return result;
     }
 
+    /*
+     * меняем все записи в таблице со значением поля foo
+     * @param databaseName имя базы данных
+     * @param tableName имя таблицы в которой ищем и меняем записи
+     * @param foo значение поля по которому будем выбирать записи в таблице
+     * @param newRecord значения которые будем устанавливаться найденным записям
+     */
     public static void patchRecordsByFoo(String databaseName, String tableName, String foo, Record newRecord)
             throws SQLException {
         String sql = "UPDATE \"" + tableName + "\" SET foo=?, bar=?, baz=? WHERE foo=?";
