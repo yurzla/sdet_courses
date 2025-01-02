@@ -83,7 +83,7 @@ public class Program{
     }
 
     /*
-     * запись в таблице со стообцами Foo, Bar, Baz
+     * запись в таблице со столбцами Foo, Bar, Baz
      */
     static class Record {
         public String Foo;
