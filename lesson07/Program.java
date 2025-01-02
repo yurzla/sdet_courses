@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /*
- * проект написан и запускается в vscode
+ * Note: проект написан и запускается в vscode
  */
 
 /* Задание 7:
@@ -30,7 +30,7 @@ public class Program{
         String databaseName = "lesson07";
         String tableName = "foobarbaz1";
         try {
-            Class.forName("org.postgresql.Driver"); // проверяем наличие драйвера для постгреса, если нет - кидается исключение
+            Class.forName("org.postgresql.Driver"); // проверяем наличие драйвера для постгре, если нет - кидается исключение
             try {
                 createDatabase(databaseName); // создание базы кидает исключение если база уже есть
             }
@@ -60,7 +60,7 @@ public class Program{
 
     /*
      * создание базы данных
-     * @param databaseName - имя базы данных которую надо создать
+     * @param databaseName имя базы данных которую надо создать
      */
     public static void createDatabase(String databaseName) throws SQLException {
         try (Connection conn = DriverManager.getConnection(jdbcURL, username, password);
